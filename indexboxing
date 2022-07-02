@@ -1,0 +1,36 @@
+// You are given A boxes kept in a row (1-based indexing) and a number B. 
+/* 1<=A <= 10^6
+2<=B<=15
+
+INT A
+INT B
+
+RETURN NO. OF BOX CONTAIN PRIME 
+input 1: 
+  a=2
+  b=3
+  output:1
+  a=4
+  b=7
+   output:2
+  
+   */
+   
+   
+
+  int Solution::solve(int A, int B){
+    int maxN - A + B;
+    vector<int> p(maxN +1, 1);
+    for (int i=2; i<=maxN; i++){
+        if (p[i]){
+            for (int j-i *i;j<=maxN; j+=i){
+                p[j] = 0;
+            }
+        }
+    }
+    int cnt =0;
+    for(int  i=B + 1; i<=maxN; i++){
+        cnt += p[i];
+    }
+    return cnt;
+  }
